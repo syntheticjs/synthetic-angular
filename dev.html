@@ -4,12 +4,12 @@
 	<meta charset="UTF-8">
 	<title>Synthteic synthetic-angular</title>
 
-	<script src="http://studio:88/components/vendor/dist/vendor.js" baseurl=""></script>
-	<script src="http://studio:88/components/vendor-component/index.js" baseurl=""></script>
+	<script src="http://localhost:7777/components/vendor/dist/vendor.js" baseurl=""></script>
+	<script src="http://localhost:7777/components/vendor-component/index.js" baseurl=""></script>
 	<!--<script src="http://studio:88/components/synthet/dist/synthet.js"></script>-->
 	<script>
-	Vendor.addAlias('abstudio', 'http://studio:88/components/');
-	Vendor.addAlias('polyvitamins', 'http://studio:88/polyvitamins/');
+	Vendor.addAlias('abstudio', 'http://localhost:7777/components/');
+	Vendor.addAlias('polyvitamins', 'http://localhost:7777/polyvitamins/');
 	</script>
 
 	<!--<script src="test/vendor/synthetic/dist/synthetic.js"></script>
@@ -98,8 +98,8 @@
 	<synthetic-angular title="Hello, world"></synthetic-angular>
 </body>
 <script>
-vendor(['test/vendor/angularjs/angular.min.js','http://studio:88/syntheticjs/synthetic/component.json'], function() {
-	vendor(['test/vendor/synthetic-demo/component.json', 'http://studio:88/syntheticjs/synthetic-angular/component.json'], function() {
+vendor(['test/vendor/angularjs/angular.min.js','http://studio:7777/syntheticjs/synthetic/component.json'], function() {
+	vendor(['test/vendor/synthetic-demo/component.json', 'http://studio:7777/syntheticjs/synthetic-angular/component.json'], function() {
 		
 	});
 });
