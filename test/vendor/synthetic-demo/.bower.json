@@ -1,0 +1,39 @@
+{
+  "name": "synthetic-demo",
+  "homepage": "https://github.com/syntheticjs/synthetic-demo",
+  "authors": [
+    {
+      "name": "Vladimir Kalmykov (Morulus)",
+      "email": "vladimirmorulus@gmail.com"
+    }
+  ],
+  "description": "Synthetic demo page",
+  "main": "dist/synthetic-demo.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "web-components"
+  ],
+  "license": "MIT",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "synthetic": "latest"
+  },
+  "_release": "f29e0e0a65",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "f29e0e0a65b2c02de985e58138779a4ba35e7fe7"
+  },
+  "_source": "git://github.com/syntheticjs/synthetic-demo.git",
+  "_target": "*",
+  "_originalSource": "synthetic-demo"
+}

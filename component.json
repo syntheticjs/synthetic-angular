@@ -1,0 +1,26 @@
+{
+  "name": "synthetic-angular",
+  "repository": "syntheticjs/synthetic-angular",
+  "description": "Demonstration how synthetic can be angular",
+  "version": "0.0.1",
+  "keywords": [],
+  "authors": [
+    {
+      "name": "synthetic",
+      "email": "vladimirmorulus@gmail.com"
+    }
+  ],
+  "dependencies": {},
+  "license": "MIT",
+  "remotes": [
+    "github"
+  ],
+  "main": "dist/synthetic-angular.js",
+  "scripts": [
+    "src/synthetic-angular.js"
+  ],
+  "tags": [
+    "synthetic",
+    "angular"
+  ]
+}

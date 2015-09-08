@@ -1,0 +1,33 @@
+{
+  "name": "synthetic-angular",
+  "version": "0.0.1",
+  "homepage": "https://github.com/syntheticjs/synthetic-angular",
+  "authors": [
+    {
+      "name": "synthetic",
+      "email": "vladimirmorulus@gmail.com"
+    }
+  ],
+  "description": "Demonstration how synthetic can be angular",
+  "main": "dist/synthetic-angular.js",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "web-components"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "synthetic": "latest",
+    "synthetic-demo": "latest",
+    "angularjs": "~1.4.5"
+  }
+}
