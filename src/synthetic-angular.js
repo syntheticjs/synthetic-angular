@@ -4,9 +4,12 @@ define([
 ],
 	function(tpl, tpl2) {
 	
-	Synthetic.createComponent('synthetic-angular', function($component) {
+	Synthetic.createComponent({
+			name: 'synthetic-angular',
+			engine: 'angular'
+		}, function($component) {
 		$component.created(function($self, $scope) {
-			$self.template(tpl, 'angular');
+			setTimeout(function() { $self.$template(tpl); }, 2000);
 			
 		});
 
@@ -15,9 +18,12 @@ define([
 		});
 	});
 
-	Synthetic.createComponent('synthetic-angular2', function($component) {
+	Synthetic.createComponent({
+		name: 'synthetic-angular2',
+		engine: 'angular'
+	}, function($component) {
 		$component.created(function($self, $scope) {
-			$self.template(tpl2, 'angular');
+			$self.$template(tpl2, 'angular');
 			
 		});
 
