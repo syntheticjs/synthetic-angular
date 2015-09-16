@@ -10,7 +10,6 @@ define([
 		}, function($component) {
 		$component.created(function($self, $scope) {
 			setTimeout(function() { $self.$template(tpl); }, 2000);
-			
 		});
 
 		$component.watch('answers', ['response'], function(response) {
