@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Synthteic synthetic-angular</title>
-
+	<script src='test/vendor/angularjs/angular.js'></script>
 	<script src="http://localhost:7777/components/vendor/dist/vendor.js" baseurl=""></script>
 	<script src="http://localhost:7777/components/vendor-component/index.js" baseurl=""></script>
 	<!--<script src="http://studio:88/components/synthet/dist/synthet.js"></script>-->
@@ -95,19 +95,17 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
 </head>
 <body>
-
+	<synthetic-angular title="Hello, world"></synthetic-angular>
 </body>
-<script id="testscript" type="chunk">
-	<div>
-		COMPONENT #1
-		<synthetic-angular title="Hello, world">
-		</synthetic-angular>
-	</div>
-</script>
+
 <script>
-vendor(['test/vendor/angularjs/angular.min.js','http://studio:7777/syntheticjs/synthetic/component.json'], function() {
+vendor(['http://studio:7777/syntheticjs/synthetic/component.json'], function() {
 	vendor(['test/vendor/synthetic-demo/component.json', 'http://studio:7777/syntheticjs/synthetic-angular/component.json'], function() {
-		document.body.innerHTML = document.querySelector('#testscript').innerHTML;
+			Synthetic(document.querySelector('synthetic-angular')).$apply(function($scope) {
+				
+					$scope.collection = ['a','b','c','d','e','f']
+			});
+			
 	});
 });
 </script>
