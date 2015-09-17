@@ -8,9 +8,8 @@ define([
 			name: 'synthetic-angular',
 			engine: 'angular'
 		}, function($component) {
-		$component.created(function($self, $scope) {
-			setTimeout(function() { $self.$template(tpl); }, 2000);
-			
+		$component.created(function($self, $scope, $generator) {
+			setTimeout(function() { $generator.template(tpl); }, 2000);
 		});
 
 		$component.watch('answers', ['response'], function(response) {
