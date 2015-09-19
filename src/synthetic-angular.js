@@ -10,6 +10,11 @@ define([
 		}, function($component) {
 		
 		$component.created(function($self, $scope, $generator) {
+			
+		});
+
+		$component.watch('attributes', ['template'], function($generator, template) {
+			console.log('watch attribute', template);
 			$generator.template(tpl);
 		});
 
@@ -23,10 +28,15 @@ define([
 		engine: 'angular'
 	}, function($component) {
 		$component.created(function($self, $scope) {
-			setTimeout(function() {
-				console.log('init template!');
-				$self.$template(tpl2, 'angular');
-			}, 700);			
+			$self.watch('attributes', ['template'], function($generator, template) {
+				if (template)
+				$generator.template(tpl2, 'angular');
+			});
+
+			$self.watch('attributes', ['title'], function($scope, title) {
+				if (title)
+					console.log('catched title', title, $scope);
+			});
 		});
 
 		$component.watch('answers', ['response'], function(response) {
