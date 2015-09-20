@@ -55,7 +55,7 @@ _base64DecodeString = function() {
                 }, 2e3);
             });
             $component.watch("answers", [ "response" ], function(response) {
-                console.log("response is ", response);
+                
             });
         });
         Synthetic.createComponent({
@@ -66,7 +66,7 @@ _base64DecodeString = function() {
                 $self.$template(tpl2, "angular");
             });
             $component.watch("answers", [ "response" ], function(response) {
-                console.log("response is ", response);
+                
             });
         });
     })(template, template2);

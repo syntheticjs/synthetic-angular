@@ -2,5 +2,7 @@
 	<h1>{{attributes.title}}</h1>
 	<h2>My parent scope is: {{$parent.attributes.title}} {{$parent.answers.response}}</h2>
 	<h3>{{attributes.title2}}</h3>
-	<descript></descript>
+	<descript>
+		<synthetic-angular3 supertemplate="{{$parent.attributes.title2}}" ng-repeat="t in [1,2,3]"></synthetic-angular3>
+	</descript>
 </div>

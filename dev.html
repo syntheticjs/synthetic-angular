@@ -95,17 +95,38 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<synthetic-angular title="Hello, world"></synthetic-angular>
+<button id="actionLCollection">Load collection</button>
+	<synthetic-angular fx-fx="first" title="Hello, world" template="123"></synthetic-angular>
+	
 </body>
 
 <script>
+function rand( min, max ) {	// Generate a random integer
+	// 
+	// +   original by: Leslie Hoare
+
+	if( max ) {
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+	} else {
+		return Math.floor(Math.random() * (min + 1));
+	}
+}
+
+
 vendor(['http://studio:7777/syntheticjs/synthetic/component.json'], function() {
 	vendor(['test/vendor/synthetic-demo/component.json', 'http://studio:7777/syntheticjs/synthetic-angular/component.json'], function() {
-			Synthetic(document.querySelector('synthetic-angular')).$apply(function($scope) {
+			document.querySelector("#actionLCollection").addEventListener('click', function() {
 				
-					$scope.collection = ['a','b','c','d','e','f']
+				var letters = ('abcdefghijklmnopqrstuvwxyz0123456789').split('');
+				Synthetic(document.querySelector("synthetic-angular")).$apply(function($scope) {
+					window.timeTest = new Date();
+					var randomCollection = [];
+					for (var i = 0;i<5;++i) {
+						randomCollection.push(letters.splice(rand(0,letters.length-1),1));
+					}
+					$scope.collection = randomCollection;
+				});
 			});
-			
 	});
 });
 </script>

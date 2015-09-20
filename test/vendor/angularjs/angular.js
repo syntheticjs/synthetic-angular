@@ -27086,6 +27086,7 @@ var ngRepeatDirective = ['$parse', '$animate', function($parse, $animate) {
     terminal: true,
     $$tlb: true,
     compile: function ngRepeatCompile($element, $attr) {
+      console.log("%cng", "color:orange;font-weight:bold;", 'ng-repeat compiler', $element, $attr);
       var expression = $attr.ngRepeat;
       var ngRepeatEndComment = document.createComment(' end ngRepeat: ' + expression + ' ');
 
@@ -27131,7 +27132,7 @@ var ngRepeatDirective = ['$parse', '$animate', function($parse, $animate) {
       }
 
       return function ngRepeatLink($scope, $element, $attr, ctrl, $transclude) {
-
+        console.log("%cng", "color:orange;font-weight:bold;", 'ng-repeat link', $scope, $element, $attr);
         if (trackByExpGetter) {
           trackByIdExpFn = function(key, value, index) {
             // assign key, value, and $index to the locals so that they can be used in hash functions
@@ -27232,6 +27233,8 @@ var ngRepeatDirective = ['$parse', '$animate', function($parse, $animate) {
             block.scope.$destroy();
           }
 
+          if (window.z) debugger;
+
           // we are not using forEach for perf reasons (trying to avoid #call)
           for (index = 0; index < collectionLength; index++) {
             key = (collection === collectionKeys) ? index : collectionKeys[index];
@@ -27257,7 +27260,9 @@ var ngRepeatDirective = ['$parse', '$animate', function($parse, $animate) {
               updateScope(block.scope, index, valueIdentifier, value, keyIdentifier, key, collectionLength);
             } else {
               // new item which we don't know about
+             
               $transclude(function ngRepeatTransclude(clone, scope) {
+                 console.log("%cng", "color:orange;font-weight:bold;", 'ng-repeat pre-transclude', clone, scope);
                 block.scope = scope;
                 // http://jsperf.com/clone-vs-createcomment
                 var endNode = ngRepeatEndComment.cloneNode(false);
@@ -27272,6 +27277,7 @@ var ngRepeatDirective = ['$parse', '$animate', function($parse, $animate) {
                 block.clone = clone;
                 nextBlockMap[block.id] = block;
                 updateScope(block.scope, index, valueIdentifier, value, keyIdentifier, key, collectionLength);
+                console.log("%cng", "color:orange;font-weight:bold;", 'ng-repeat after-transclude', block.scope, index, valueIdentifier, value, keyIdentifier, key, collectionLength);
               });
             }
           }
